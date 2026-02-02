@@ -105,7 +105,7 @@ second_yes.addEventListener('click', () => {
 
     // Datum formatieren z.B. "2. Februar 2026"
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    dateText.textContent = `Heute ist der ${today.toLocaleDateString('de-DE', options)}`;
+    dateText.textContent = `${today.toLocaleDateString('de-DE', options)}`;
 });
 
 
