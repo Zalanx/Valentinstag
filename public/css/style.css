@@ -67,6 +67,7 @@ body {
 
 .message {
     display: none;
+    color: #8800ff;
 }
 
 .banner-gif {
@@ -185,3 +186,16 @@ body {
     height: 50vh; /* Vollbild */
     background-color: #ffe6e6; /* sanfter Hintergrund */
 }
+
+.happy-container h2 {
+    font-size: 2rem;
+    color: #ff3366;
+    margin-top: 1rem;
+}
+
+#fun-button:hover {
+    transform: scale(1.1);
+    background-color: #ff3399;
+    transition: 0.3s ease;
+}
+

@@ -26,7 +26,7 @@ let language = "english"; // Default language is English
 const no_button = document.getElementById('no-button');
 const yes_button = document.getElementById('yes-button');
 let i = 1;
-let size = 50;
+let size = 100;
 let clicks = 0;
 
 const secondQuestion = document.querySelector(".second-question");
@@ -43,7 +43,7 @@ no_button.addEventListener('click', () => {
     }
     clicks++;
     // increase button height and width gradually to 250px
-    const sizes = [40, 50, 30, 35, 45]
+    const sizes = [60, 70, 50, 55, 25]
     const random = Math.floor(Math.random() * sizes.length);
     size += sizes[random]
     yes_button.style.height = `${size}px`;
@@ -123,5 +123,20 @@ second_no.addEventListener('click', () => {
     
     const finalImg = document.getElementById('final-img');
     finalImg.src = "public/images/sadcat.gif"; // Hier dein gewünschtes Bild
+});
+
+const funButton = document.getElementById('fun-button');
+const happyContainer = document.querySelector('.happy-container');
+const happyGif = document.getElementById('happy-gif');
+
+funButton.addEventListener('click', () => {
+    // Trauriges Bild + Button ausblenden
+    document.querySelector('.final-image').style.display = "none";
+
+    // Happy Container einblenden
+    happyContainer.style.display = "block";
+
+    // Happy GIF setzen
+    happyGif.src = "public/images/yippiecat.gif"; // hier dein großes Happy-GIF
 });
 
