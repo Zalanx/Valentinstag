@@ -89,13 +89,27 @@ function refreshBanner() {
 }
 
 second_yes.addEventListener('click', () => {
+    // Nachricht anzeigen
     secondMessage.style.display = "block";
-    banner.src = "public/images/happycat.gif"; // Optional anderes GIF für zweite Frage
+    
+    // Banner optional ändern
+    banner.src = "public/images/yes2.gif";
     refreshBanner();
 
-    // Buttons der zweiten Frage ausblenden
+    // Buttons ausblenden
     secondQuestion.querySelector('.second-buttons').style.display = "none";
+
+    // Heutiges Datum anzeigen
+    const dateText = document.getElementById('date-text');
+    const today = new Date();
+
+    // Datum formatieren z.B. "2. Februar 2026"
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateText.textContent = `Heute ist der ${today.toLocaleDateString('de-DE', options)}`;
 });
+
+
+
 
 second_no.addEventListener('click', () => {
     // Alles andere ausblenden
