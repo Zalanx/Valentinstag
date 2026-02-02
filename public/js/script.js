@@ -93,7 +93,7 @@ second_yes.addEventListener('click', () => {
     secondMessage.style.display = "block";
     
     // Banner optional ändern
-    banner.src = "public/images/yes2.gif";
+    banner.src = "public/images/happycat.gif";
     refreshBanner();
 
     // Buttons ausblenden
