@@ -129,3 +129,59 @@ body {
         width: 100%;
     }
 }
+
+/* === Zweite Frage === */
+.second-question {
+    display: none;       /* initial unsichtbar */
+    opacity: 0;          /* für sanfte Einblendung */
+    transform: translateY(20px); /* leicht nach unten verschoben */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 20px;
+}
+
+/* Wenn sichtbar, Animation aktiv */
+.second-question.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Zweite Buttons */
+.second-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.second-buttons button {
+    margin: 0 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background-color: #ff66aa; /* rosa für zweite Frage */
+    transition: all 0.3s ease;
+}
+
+.second-buttons button:hover {
+    transform: scale(1.1);
+    background-color: #ff3399;
+}
+
+/* Zweite Nachricht */
+.second-message h2 {
+    display: none;  /* bleibt erst unsichtbar */
+    margin-top: 15px;
+    color: #d6336c;
+    font-size: 1.5rem;
+}
+
+.final-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Vollbild */
+    background-color: #ffe6e6; /* sanfter Hintergrund */
+}

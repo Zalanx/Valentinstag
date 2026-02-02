@@ -29,6 +29,11 @@ let i = 1;
 let size = 50;
 let clicks = 0;
 
+const secondQuestion = document.querySelector(".second-question");
+const second_yes = document.getElementById('second-yes-button');
+const second_no = document.getElementById('second-no-button');
+const secondMessage = document.getElementById('second-success-message');
+
 no_button.addEventListener('click', () => {
     // Change banner source
     let banner = document.getElementById('banner');
@@ -49,14 +54,15 @@ no_button.addEventListener('click', () => {
         no_button.innerHTML = answers_no[language][i];
         i++;
     } else if (i === total - 1) {
-        alert(answers_no[language][i]);
-        i = 1;
-        no_button.innerHTML = answers_no[language][0];
-        yes_button.innerHTML = answers_yes[language];
-        yes_button.style.height = "50px";
-        yes_button.style.width = "50px";
-        size = 50;
-    }
+    // Button einfach verschwinden lassen
+    no_button.style.display = "none"; 
+
+    // Optional: den Ja-Button zurücksetzen, falls nötig
+    yes_button.innerHTML = answers_yes[language];
+    yes_button.style.height = "150px";
+    yes_button.style.width = "150px";
+    size = 50;
+}
 });
 
 yes_button.addEventListener('click', () => {
@@ -70,6 +76,8 @@ yes_button.addEventListener('click', () => {
     // show message div
     let message = document.getElementsByClassName('message')[0];
     message.style.display = "block";
+
+    secondQuestion.classList.add("show");
 });
 
 function refreshBanner() {
@@ -79,3 +87,27 @@ function refreshBanner() {
     banner.src = '';
     banner.src = src;
 }
+
+second_yes.addEventListener('click', () => {
+    secondMessage.style.display = "block";
+    banner.src = "public/images/happycat.gif"; // Optional anderes GIF für zweite Frage
+    refreshBanner();
+
+    // Buttons der zweiten Frage ausblenden
+    secondQuestion.querySelector('.second-buttons').style.display = "none";
+});
+
+second_no.addEventListener('click', () => {
+    // Alles andere ausblenden
+    document.querySelector('.container').style.display = "none";  // optional alles ausblenden
+    document.querySelector('.second-question').style.display = "none";
+    document.querySelector('.message').style.display = "none";
+
+    // Final Image anzeigen
+    const finalContainer = document.querySelector('.final-image');
+    finalContainer.style.display = "block";
+    
+    const finalImg = document.getElementById('final-img');
+    finalImg.src = "public/images/sadcat.gif"; // Hier dein gewünschtes Bild
+});
+
